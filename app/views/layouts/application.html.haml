@@ -1,0 +1,32 @@
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title= content_for?(:title) ? yield(:title) : WaltersSocialSharing::APP_NAME
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag params[:controller]
+    = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    = csrf_meta_tags
+    /[if lt IE 9]
+    :css
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .x-boundlist-item {
+        white-space: nowrap;
+      }
+
+  %body
+    .container
+
+      .content
+        - if flash[:notice]
+          %p{:class => 'notice'}= flash[:notice]
+        - if flash[:alert]
+          %p{:class => 'alert'}= flash[:alert]
+        .row
+          .span12
+            = yield
+
+      %footer
+        %p &copy; #{WaltersSocialSharing::APP_NAME} #{Time.now.year}
