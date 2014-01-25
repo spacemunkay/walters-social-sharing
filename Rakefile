@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-WaltersSocialSharing::Application.load_tasks
+WSS::Application.load_tasks

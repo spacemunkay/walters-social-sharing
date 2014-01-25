@@ -2,7 +2,7 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
-    %title= content_for?(:title) ? yield(:title) : WaltersSocialSharing::APP_NAME
+    %title= content_for?(:title) ? yield(:title) : WSS::APP_NAME
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag params[:controller]
     = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
@@ -29,4 +29,4 @@
             = yield
 
       %footer
-        %p &copy; #{WaltersSocialSharing::APP_NAME} #{Time.now.year}
+        %p &copy; #{WSS::APP_NAME} #{Time.now.year}
