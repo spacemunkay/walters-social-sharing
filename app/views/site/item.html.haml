@@ -22,4 +22,17 @@
 .row
   .col-md-12
     %p
-      #{@art_object.Description}
+      %div{ id: :accordian, class: "panel-group" }
+        %div{ class: "panel panel-default"}
+          .panel-heading
+            %h4.panel-title
+              %a{ href: "#collapseOne", "data-toggle" => "collapse", "data-parent" => "#accordion"}
+                Details
+        %div{ id: "collapseOne", class: "panel-collapse collapse"}
+          .panel-body.transparent-bg
+            %p #{@art_object.Description}
+            %p #{@art_object.Collection}
+            %p #{@art_object.Classification}
+            %p #{@art_object.Creator}
+            %p #{@art_object.CreditLine}
+

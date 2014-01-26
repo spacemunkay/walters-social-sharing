@@ -70,3 +70,9 @@ body{
 a:hover{
   text-decoration: none;
 }
+
+.transparent-bg{
+  padding: 5px 20px 5px 20px;
+  background-color: rgba(230,230,230, .5);
+  display: inline-block;
+}
