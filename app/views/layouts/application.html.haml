@@ -21,9 +21,9 @@
   %body
     .container
       - if flash[:notice]
-        %p{:class => 'notice'}= flash[:notice]
+        %p{:class => 'notice transparent-bg-content'}= flash[:notice]
       - if flash[:alert]
-        %p{:class => 'alert'}= flash[:alert]
+        %p{:class => 'alert transparent-bg-content'}= flash[:alert]
       = yield
 
       %footer
