@@ -1,6 +1,7 @@
 @import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css");
 body { margin-top:20px; }
 .fa { font-size: 50px; outline: none; padding:10px; padding-left: 0}
+.fa:first-child{ padding-left: 10px; }
 /*span {text-decoration: none;}*/
 /*.container .fa i {text-decoration: none;}*/
 /*a { transition: all .3s ease;-webkit-transition: all .3s ease;-moz-transition: all .3s ease;-o-transition: all .3s ease; text-decoration: none;}*/
@@ -75,4 +76,26 @@ a:hover{
   padding: 5px 20px 5px 20px;
   background-color: rgba(230,230,230, .5);
   display: inline-block;
+}
+
+.transparent-bg-content{
+  padding: 5px 20px 5px 20px;
+  background-color: rgba(230,230,230, .7);
+  display: inline-block;
+}
+
+#social-icons{
+    background-color: rgba(244,244,244,0.5);
+    margin: 20px 0;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 3px 10px 3px 0px;
+}
+
+a{
+  color: #333;
+}
+
+a:hover{
+  cursor: pointer;
 }

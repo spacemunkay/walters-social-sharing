@@ -1,24 +1,21 @@
 = javascript_include_tag "item"
 %div{ id: "item_data", "data-bgimage" => @art_object.PrimaryImage.Large.split("?").first}
 %h3
-  %a{ href: @walters_url, class: "btn-lg btn-primary"}
+  %a{ href: @walters_url, class: "btn-lg btn-default"}
     #{@art_object.Title} 
-    %i{ class: "fa fa-chevron-circle-right", style: "font-size: 25px;"}
+    %i{ class: "fa fa-external-link-square", style: "font-size: 18px;"}
 .row
   .col-md-12
-    %span
-      %a{ href: "https://www.facebook.com/sharer/sharer.php?&u=#{URI.escape(@walters_url)}&display=popup", class: "facebook-like"}
-        %i{ class: "fa fa-facebook-square"}
-    %span
-      %a{ href: "http://www.pinterest.com/pin/create/button/?url=#{URI.escape(@walters_url)}&media=#{@art_object.PrimaryImage.Small}&description=#{URI.escape(@pinterest_desc)}", class: "pinterest", style: "height: 55px;  width: 55px;"}
-        %i{ class: "fa fa-pinterest-square"}
-    %span
-      %a{ href: "https://twitter.com/intent/tweet?text=#{URI.escape(@twitter_tweet)}&url=#{@walters_url}", class: "twitter", style: "height: 55px;  width: 55px;"}
-        %i{ class: "fa fa-twitter-square", style: "height: 55px;  width: 55px;"}
-.row
-  .col-md-12
-    %button{ class: "btn sample btn-sample"} Buy Prints
-    %button{ class: "btn sample btn-sample"} Donate
+    %div{ id: "social-icons"}
+      %span
+        %a{ href: "https://www.facebook.com/sharer/sharer.php?&u=#{URI.escape(@walters_url)}&display=popup", class: "facebook-like"}
+          %i{ class: "fa fa-facebook-square"}
+      %span
+        %a{ href: "http://www.pinterest.com/pin/create/button/?url=#{URI.escape(@walters_url)}&media=#{@art_object.PrimaryImage.Small}&description=#{URI.escape(@pinterest_desc)}", class: "pinterest", style: "height: 55px;  width: 55px;"}
+          %i{ class: "fa fa-pinterest-square"}
+      %span
+        %a{ href: "https://twitter.com/intent/tweet?text=#{URI.escape(@twitter_tweet)}&url=#{@walters_url}", class: "twitter", style: "height: 55px;  width: 55px;"}
+          %i{ class: "fa fa-twitter-square", style: "height: 55px;  width: 55px;"}
 .row
   .col-md-12
     %p
@@ -29,10 +26,15 @@
               %a{ href: "#collapseOne", "data-toggle" => "collapse", "data-parent" => "#accordion"}
                 Details
         %div{ id: "collapseOne", class: "panel-collapse collapse"}
-          .panel-body.transparent-bg
+          .panel-body.transparent-bg-content
             %p #{@art_object.Description}
             %p #{@art_object.Collection}
             %p #{@art_object.Classification}
             %p #{@art_object.Creator}
             %p #{@art_object.CreditLine}
-
+.row
+  .col-md-12
+    %p
+      %a Buy Prints
+      |
+      %a Donate
