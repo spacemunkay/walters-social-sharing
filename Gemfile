@@ -46,3 +46,4 @@ end
 #
 gem 'bootstrap-sass-rails'
 gem 'haml-rails'
+gem 'thewalters'

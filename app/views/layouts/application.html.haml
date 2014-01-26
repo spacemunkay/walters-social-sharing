@@ -4,6 +4,7 @@
     %meta{:charset => "utf-8"}/
     %title= content_for?(:title) ? yield(:title) : WSS::APP_NAME
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application"
     = javascript_include_tag params[:controller]
     = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = csrf_meta_tags
@@ -18,15 +19,11 @@
 
   %body
     .container
-
-      .content
-        - if flash[:notice]
-          %p{:class => 'notice'}= flash[:notice]
-        - if flash[:alert]
-          %p{:class => 'alert'}= flash[:alert]
-        .row
-          .span12
-            = yield
+      - if flash[:notice]
+        %p{:class => 'notice'}= flash[:notice]
+      - if flash[:alert]
+        %p{:class => 'alert'}= flash[:alert]
+      = yield
 
       %footer
         %p &copy; #{WSS::APP_NAME} #{Time.now.year}
