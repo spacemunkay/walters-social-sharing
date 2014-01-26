@@ -1,5 +1,6 @@
 WSS::Application.routes.draw do
   root "site#index"
+  get "/:object_number" => "site#item", as: "item", constraints: {object_number: /[\w\.]*/}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

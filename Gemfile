@@ -47,3 +47,4 @@ end
 gem 'bootstrap-sass-rails'
 gem 'haml-rails'
 gem 'rails_12factor', group: :production
+gem 'thewalters'
